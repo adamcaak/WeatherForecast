@@ -9,10 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack {
-            DayForecast(day: "Mon", isRainy: false, high: 50, low: 30)
-            
-            DayForecast(day: "Tue", isRainy: true, high: 40, low: 20)
+        ScrollView(.horizontal) {
+            HStack {
+                DayForecast(day: "Mon", isRainy: false, high: 50, low: 30)
+                
+                DayForecast(day: "Tue", isRainy: true, high: 40, low: 20)
+                
+                DayForecast(day: "Wen", isRainy: false, high: 60, low: 30)
+                
+                DayForecast(day: "Thu", isRainy: false, high: 55, low: 25)
+                
+                DayForecast(day: "Fri", isRainy: false, high: 60, low: 40)
+                
+                DayForecast(day: "Sat", isRainy: false, high: 70, low: 30)
+                
+                DayForecast(day: "Sun", isRainy: true, high: 30, low: 10)
+            }
         }
     }
 }
@@ -42,7 +54,7 @@ struct DayForecast: View {
             return Color.yellow
         }
     }
-            
+    
     var body: some View {
         VStack {
             Text(day)
